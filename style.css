@@ -1,0 +1,125 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f8ff;
+    overflow: hidden;
+}
+
+.card {
+    position: relative;
+    width: 400px;
+    height: 450px;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.card h1 {
+    font-family: 'Arial', sans-serif;
+    color: white;
+    font-size: 20px;
+}
+
+.fireworks {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.fireworks span {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: red;
+    animation: explode 1s linear forwards;
+}
+
+@keyframes explode {
+    0% {
+      transform: scale(1) translate(0, 0);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1) translate(calc(var(--dx) * 100px), calc(var(--dy) * 100px));
+      opacity: 0;
+    }
+}
+
+.balloons {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 100px;
+    animation: floatUp 4s forwards;
+}
+
+@keyframes floatUp {
+    0% {
+      transform: translate(-50%, 100%);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-50%, -300%);
+      opacity: 0;
+    }
+}
+
+.balloons span {
+    width: 20px;
+    height: 30px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 5px;
+}
+
+.balloon-red {
+    background: red;
+}
+
+.balloon-blue {
+    background: blue;
+}
+
+.balloon-yellow {
+    background: yellow;
+}
+
+.wish {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    line-height: 1.5;
+    animation: fadeIn 2s ease-in-out;
+    display: none;
+}
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translate(-50%, -60%);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+}
